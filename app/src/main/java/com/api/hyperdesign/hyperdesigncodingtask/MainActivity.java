@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onResponse(Call<ArrayList<Product>> call, Response<ArrayList<Product>> response) {
 
-            adapter.addItems(response.body());
-            adapter.notifyDataSetChanged();
-            progress.setVisibility(View.GONE);
+           adapter.addItems(response.body());
+           adapter.notifyDataSetChanged();
+           progress.setVisibility(View.GONE);
         }
 
         @Override

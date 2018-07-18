@@ -1,6 +1,8 @@
 package com.api.hyperdesign.hyperdesigncodingtask.Ui;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
 
     ArrayList<Product> products;
     public static Context mContext;
+
     public ProductAdapter () {
         products = new ArrayList<>();
     }
@@ -32,7 +35,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ProductViewHolder holder, int position) {
+    public void onBindViewHolder(ProductViewHolder holder, final int position) {
 
         holder.bind(products.get(position));
     }
@@ -41,6 +44,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
     public int getItemCount() {
         return products.size();
     }
+
     public void addItems(ArrayList<Product> newProduct){
         products.addAll(newProduct);
     }
