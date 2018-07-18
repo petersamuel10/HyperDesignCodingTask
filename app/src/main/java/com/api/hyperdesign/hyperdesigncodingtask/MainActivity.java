@@ -1,15 +1,14 @@
 package com.api.hyperdesign.hyperdesigncodingtask;
 
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.ProgressBar;
 
 import com.api.hyperdesign.hyperdesigncodingtask.DataModel.Product;
-import com.api.hyperdesign.hyperdesigncodingtask.Interface.APIInterface;
 import com.api.hyperdesign.hyperdesigncodingtask.Interface.DataManager;
 import com.api.hyperdesign.hyperdesigncodingtask.Ui.ProductAdapter;
 
@@ -17,12 +16,9 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onResponse(Call<ArrayList<Product>> call, Response<ArrayList<Product>> response) {
 
-           adapter.addItems(response.body());
-           adapter.notifyDataSetChanged();
-           progress.setVisibility(View.GONE);
+            adapter.addItems(response.body());
+            adapter.notifyDataSetChanged();
+            progress.setVisibility(View.GONE);
         }
 
         @Override

@@ -26,6 +26,7 @@ public class DataManager {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();
+
         service = retrofit.create(APIInterface.class);
     }
 
